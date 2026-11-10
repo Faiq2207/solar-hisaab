@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - "solar-hisaab.zip"
+      - "build_pages.py"
 permissions:
   contents: write
 jobs:
@@ -26,6 +27,7 @@ jobs:
           python-version: "3.12"
       - run: pip install requests beautifulsoup4
       - run: python update_prices.py
+      - run: python build_pages.py
       - name: Save changes
         run: |
           git config user.name "price-bot"
