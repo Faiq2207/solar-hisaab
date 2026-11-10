@@ -1,0 +1,19 @@
+{
+  "_note": "Each entry is one product page. 'kind' decides how it is averaged. 'pattern' must capture the price number. Remove or fix any entry if a site changes its layout or asks you to stop.",
+  "sources": [
+    {"kind":"panel_ppw","item":"Longi Hi-Mo X7 585W N-type bifacial","src":"solarpanelpriceinpakistan.online","url":"https://solarpanelpriceinpakistan.online/","pattern":"Longi Hi-Mo X7[^|]*\\|\\s*([\\d.]+)"},
+    {"kind":"panel_ppw","item":"Astronergy 585W N-type bifacial","src":"solarpanelpriceinpakistan.online","url":"https://solarpanelpriceinpakistan.online/","pattern":"Astronegy Energy Solar Panel N-type Bifacial 585[^|]*\\|\\s*([\\d.]+)"},
+    {"kind":"panel_ppw","item":"Risen 585W N-type TOPCon bifacial","src":"solarpanelpriceinpakistan.online","url":"https://solarpanelpriceinpakistan.online/","pattern":"Risen 585[^|]*\\|\\s*([\\d.]+)"},
+    {"kind":"panel_ppw","item":"Longi Hi-MO X10 620W N-type bifacial","src":"solarpanelprices.pk","url":"https://solarpanelprices.pk/","pattern":"Hi-mo X10 620[^|]*\\|\\s*([\\d.]+)"},
+
+    {"kind":"inverter_6","item":"Itel 6kW Pro hybrid inverter","src":"w11stop.com","url":"https://w11stop.com/solar/itel-6kw-pro-hybird-solar-inverter-price-in-pakistan"},
+    {"kind":"inverter_6","item":"Gripsun Level 6kW hybrid inverter","src":"w11stop.com","url":"https://w11stop.com/gripsun/gripsun-level-6kw-hybrid-solar-inverter-price-in-pakistan"},
+    {"kind":"inverter_6","item":"Solis 6kW LV hybrid inverter","src":"w11stop.com","url":"https://w11stop.com/solis-hybrid-solar-inverter/solis-6kw-hybrid-solar-inverter"},
+    {"kind":"inverter_6","item":"Inverex Nitrox 6.6kW hybrid inverter","src":"w11stop.com","url":"https://w11stop.com/inverex-hybrid-inverter-price-in-pakistan/inverex-nitrox-6-6kw-hybrid-solar-inverter-price-in-pakistan"},
+    {"kind":"inverter_10","item":"MaxPower Voltas H6 10kW hybrid inverter","src":"w11stop.com","url":"https://w11stop.com/maxpower-hybrid-inverters-price-in-pakistan/maxpower-voltas-h6-10kw-hybrid-inverter"},
+
+    {"kind":"battery_5kwh","item":"Bader Energy 48V 100Ah lithium battery","src":"w11stop.com","url":"https://w11stop.com/solar-lithium-ion-batteries/bader-energy-48v-100ah-lithium-battery-price-in-pakistan"},
+    {"kind":"battery_5kwh","item":"Narada 48V 100Ah lithium battery","src":"w11stop.com","url":"https://w11stop.com/narada-lithium-ion-batteries/narada-48npfc100-lithium-battery"},
+    {"kind":"battery_5kwh","item":"SolarMax 5.12kWh 48V 100Ah lithium battery","src":"w11stop.com","url":"https://w11stop.com/solarmax-lithium-battery-price-in-pakistan/solarmax-sm-lfp-5-12k-100amp-lithium-ion-solar-battery-price-in-pakistan"}
+  ]
+}

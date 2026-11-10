@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Solar Calculator Pakistan 2026: System Size, Panels, Inverter, Battery &amp; Price</title>
+<meta name="description" content="Free solar calculator for Pakistan. Add your AC, fridge, fans, lights and water motor to find the right solar system size, number of panels, inverter, batteries, total cost and monthly savings at today’s prices.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1D4E89">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<script>if("serviceWorker" in navigator && location.protocol==="https:" && !/claude\.ai/.test(location.host)){addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Solar Hisaab","applicationCategory":"UtilityApplication","operatingSystem":"Any","inLanguage":"en-PK","description":"Solar system size and price calculator for Pakistani homes.","offers":{"@type":"Offer","price":"0","priceCurrency":"PKR"}}
+</script>
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#13233A; --muted:#5A6B82; --line:#D7DFEA;
+  --panel:#1D4E89; --panel-soft:#E6EEF8; --sun:#F2B000; --sun-ink:#3A2A00; --good:#17804F;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1520; --surface:#142030; --ink:#E7EDF5; --muted:#93A4BA; --line:#25364C;
+    --panel:#6AA5EA; --panel-soft:#1A2C44; --sun:#FFC53D; --sun-ink:#2A1E00; --good:#4CC38A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1520; --surface:#142030; --ink:#E7EDF5; --muted:#93A4BA; --line:#25364C;
+  --panel:#6AA5EA; --panel-soft:#1A2C44; --sun:#FFC53D; --sun-ink:#2A1E00; --good:#4CC38A;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55}
+a{color:var(--panel)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.top{padding:28px 0 8px}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.brand b{font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.urdu{font-family:"Noto Nastaliq Urdu",serif;color:var(--muted);font-size:1rem;line-height:2.2}
+h1{font-size:clamp(1.7rem,4.2vw,2.6rem);line-height:1.15;letter-spacing:-.02em;margin:18px 0 10px;max-width:22ch;font-weight:700}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:28px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+section.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+h2{font-size:1.15rem;margin:0 0 4px;letter-spacing:-.01em}
+.hint{color:var(--muted);font-size:.88rem;margin:0 0 14px}
+.app-list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row.on .nm{font-weight:600}
+.nm{font-size:.95rem}
+.w{display:block;color:var(--muted);font-size:.78rem}
+.step{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.step button{appearance:none;border:0;background:transparent;color:var(--ink);width:36px;height:36px;font-size:1.1rem;cursor:pointer;font-family:inherit}
+.step button:hover{background:var(--panel-soft)}
+.step output{min-width:28px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.hrs{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
+.hrs input{width:58px;padding:7px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:.9rem;text-align:center}
+:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+.settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:6px}
+@media (max-width:560px){.settings{grid-template-columns:1fr}}
+.settings label{display:flex;flex-direction:column;gap:6px;font-size:.85rem;color:var(--muted)}
+.settings input,.settings select{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;font-size:.95rem}
+/* result panel: the memorable piece */
+.result{position:sticky;top:calc(16px + env(safe-area-inset-top,0px));background:var(--panel);color:#fff;border-radius:18px;padding:22px;overflow:hidden}
+:root[data-theme="dark"] .result{color:#0D1520}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .result{color:#0D1520}}
+.result .big{font-size:3.2rem;font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.result .big small{font-size:1.1rem;font-weight:600;margin-left:4px}
+.result .sub{opacity:.85;font-size:.9rem;margin:6px 0 16px}
+.array{display:grid;grid-template-columns:repeat(auto-fill,minmax(22px,1fr));gap:4px;margin:0 0 18px}
+.cell{aspect-ratio:1/1.6;border-radius:3px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);position:relative}
+.cell.lit{background:var(--sun);border-color:var(--sun)}
+.cell.lit::after{content:"";position:absolute;inset:30% 0 auto;height:1px;background:rgba(0,0,0,.18)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:7px 12px;font-size:.92rem;margin:0}
+.kv dt{opacity:.85}
+.kv dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.sep{height:1px;background:rgba(255,255,255,.25);margin:14px 0}
+:root[data-theme="dark"] .sep{background:rgba(0,0,0,.2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sep{background:rgba(0,0,0,.2)}}
+.total{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.pay{background:var(--sun);color:var(--sun-ink);border-radius:12px;padding:12px 14px;margin-top:14px;font-size:.92rem}
+.pay strong{font-size:1.15rem}
+.empty{opacity:.85;font-size:.95rem}
+/* price section */
+.prices{margin:36px 0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
+th,td{text-align:left;padding:11px 14px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;color:var(--muted);font-weight:500;font-size:.82rem;background:var(--panel-soft)}
+td.num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+td.src{font-size:.82rem}
+.updated{display:inline-block;background:var(--panel-soft);color:var(--panel);border-radius:999px;padding:4px 12px;font-size:.82rem;font-weight:600;margin:0 0 12px}
+.faq{max-width:70ch;margin:36px 0}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--muted);margin:8px 0 0}
+footer{color:var(--muted);font-size:.82rem;padding:24px 0 40px;border-top:1px solid var(--line);margin-top:24px}
+/* mobile sticky summary */
+.mbar{display:none}
+@media (max-width:900px){
+  .result{position:static}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);color:#fff;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));justify-content:space-between;align-items:center;font-size:.92rem;font-weight:600;font-variant-numeric:tabular-nums}
+  .mbar a{color:inherit;text-decoration:underline}
+  body{padding-bottom:64px}
+}
+@media (prefers-reduced-motion:no-preference){.cell.lit{transition:background .25s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><b>Solar Hisaab</b><span class="urdu" lang="ur" dir="rtl">سولر کا پورا حساب</span></div>
+    <h1>How much solar does your home need, and what will it cost?</h1>
+    <p class="lede">Add the things you run at home. The calculator works out your system size, panels, inverter and batteries, using market prices collected from Pakistani sellers.</p>
+  </header>
+
+  <div class="grid">
+    <div>
+      <section class="box" aria-labelledby="appl-h">
+        <h2 id="appl-h">Your appliances</h2>
+        <p class="hint">Set how many you have and how many hours a day each one runs.</p>
+        <div class="app-list" id="apps"></div>
+      </section>
+
+      <section class="box" style="margin-top:20px" aria-labelledby="set-h">
+        <h2 id="set-h">Your settings</h2>
+        <p class="hint">Change these to match your bill and the quotes you get.</p>
+        <div class="settings">
+          <label>Battery backup
+            <select id="battery">
+              <option value="0">No battery (cheapest, daytime only)</option>
+              <option value="0.25" selected>Some backup (evenings and short outages)</option>
+              <option value="0.4">Full night backup</option>
+            </select>
+          </label>
+          <label>Your electricity rate (Rs per unit, with taxes)
+            <input id="rate" type="number" min="5" step="1" value="35" inputmode="numeric">
+          </label>
+          <label>Panel price (Rs per watt)
+            <input id="ppw" type="number" min="10" step="0.25" inputmode="decimal">
+          </label>
+          <label>Structure, wiring and labour (Rs per kW, ask your installer)
+            <input id="install" type="number" min="0" step="1000" value="20000" inputmode="numeric">
+          </label>
+        </div>
+      </section>
+    </div>
+
+    <aside class="result" id="result" aria-live="polite">
+      <div id="resBody"></div>
+    </aside>
+  </div>
+
+  <section class="prices" id="prices" aria-labelledby="price-h">
+    <h2 id="price-h" style="font-size:1.5rem;margin-bottom:8px">Solar prices in Pakistan today</h2>
+    <span class="updated" id="updated"></span>
+    <p class="hint">Prices are collected from the sellers linked below and change often with the dollar rate. Always confirm with the seller before buying.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Item</th><th>Price</th><th>Source</th></tr></thead>
+        <tbody id="priceRows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h" style="font-size:1.5rem">Common questions</h2>
+    <details><summary>How many solar panels do I need for a 1.5 ton inverter AC?</summary>
+      <p>A 1.5 ton inverter AC running 8 hours uses roughly 8 units a day. That needs about 2 kW of panels, which is 3 to 4 panels of 585 watts, on top of what the rest of your home uses. Add your AC above to see your exact number.</p></details>
+    <details><summary>Is solar still worth it after net billing?</summary>
+      <p>Under the 2026 rules, extra power you send to the grid is bought at a much lower rate, around Rs 11 per unit. Solar still saves the most when you use the power yourself, during the day or through batteries, because every unit you don’t buy saves you your full bill rate.</p></details>
+    <details><summary>Do I need batteries?</summary>
+      <p>Without batteries, solar only runs your home during the day and switches off in a power cut. Batteries let you run lights, fans and the fridge at night and during load-shedding, but they add a lot to the cost.</p></details>
+    <details><summary>How accurate is this calculator?</summary>
+      <p>It gives a good starting estimate using average sunshine for Lahore and typical appliance power. Real numbers depend on your roof, brand choice and how you use your appliances, so use it to compare quotes, not replace them.</p></details>
+  </section>
+
+  <footer>
+    Estimates only, not a quote. Sunshine assumed at 5 peak hours a day with 78% system efficiency. Prices last checked on the date shown above; sources are linked in the table.
+  </footer>
+</div>
+
+<div class="mbar" id="mbar"></div>
+
+<script>
+/* Price snapshot. On the live site, the daily script writes prices.json and this page loads it. */
+var PRICES = {
+  updated: "11 November 2026",
+  panelPerWatt: 42.5,
+  panelWatt: 585,
+  inverters: {3:150000, 4:175000, 6:230000, 8:270000, 10:310000, 12:400000, 15:500000},
+  battery: {name:"48V 100Ah lithium (about 5 kWh)", kwh:5.12, price:235000},
+  exportRate: 11,
+  rows: [
+    {item:"Longi Hi-Mo X7 585W N-type bifacial", price:"Rs 42.75 per watt", src:"solarpanelpriceinpakistan.online", url:"https://solarpanelpriceinpakistan.online/", date:"10 Nov 2026"},
+    {item:"Astronergy 585–610W N-type bifacial", price:"Rs 41.00 per watt", src:"solarpanelpriceinpakistan.online", url:"https://solarpanelpriceinpakistan.online/", date:"10 Nov 2026"},
+    {item:"Risen 585W N-type TOPCon bifacial", price:"Rs 43.00 per watt", src:"solarpanelpriceinpakistan.online", url:"https://solarpanelpriceinpakistan.online/", date:"10 Nov 2026"},
+    {item:"Longi Hi-MO X10 620W N-type bifacial", price:"Rs 46.20 per watt", src:"solarpanelprices.pk", url:"https://solarpanelprices.pk/", date:"5 Nov 2026"},
+    {item:"Tier-1 N-type TOPCon (Jinko, JA, Trina)", price:"Rs 39.30–43.75 per watt", src:"solarcitizen.com.pk", url:"https://www.solarcitizen.com.pk/solar-panel-price-pakistan-today/", date:"Oct 2026"},
+    {item:"Itel 6kW Pro hybrid inverter", price:"Rs 140,000", src:"w11stop.com", url:"https://w11stop.com/solar/itel-6kw-pro-hybird-solar-inverter-price-in-pakistan", date:"checked 11 Nov 2026"},
+    {item:"Gripsun Level 6kW hybrid inverter", price:"Rs 225,000", src:"w11stop.com", url:"https://w11stop.com/gripsun/gripsun-level-6kw-hybrid-solar-inverter-price-in-pakistan", date:"1 Nov 2026"},
+    {item:"Solis 6kW LV hybrid inverter", price:"Rs 233,000", src:"w11stop.com", url:"https://w11stop.com/solis-hybrid-solar-inverter/solis-6kw-hybrid-solar-inverter", date:"checked 11 Nov 2026"},
+    {item:"Inverex Nitrox 6.6kW hybrid inverter", price:"Rs 270,000", src:"w11stop.com", url:"https://w11stop.com/inverex-hybrid-inverter-price-in-pakistan/inverex-nitrox-6-6kw-hybrid-solar-inverter-price-in-pakistan", date:"1 Sep 2026"},
+    {item:"Inverex Nitrox 10kW hybrid inverter", price:"Rs 237,000", src:"powerhouseexpress.com.pk", url:"https://powerhouseexpress.com.pk/collections/solar-hybrid-inverters?page=4", date:"checked 11 Nov 2026"},
+    {item:"MaxPower Voltas H6 10kW hybrid inverter", price:"Rs 375,000", src:"w11stop.com", url:"https://w11stop.com/maxpower-hybrid-inverters-price-in-pakistan/maxpower-voltas-h6-10kw-hybrid-inverter", date:"21 Jul 2026"},
+    {item:"Bader Energy 48V 100Ah lithium battery", price:"Rs 195,000", src:"w11stop.com", url:"https://w11stop.com/solar-lithium-ion-batteries/bader-energy-48v-100ah-lithium-battery-price-in-pakistan", date:"26 Jun 2026"},
+    {item:"Narada 48V 100Ah lithium battery", price:"Rs 230,000", src:"w11stop.com", url:"https://w11stop.com/narada-lithium-ion-batteries/narada-48npfc100-lithium-battery", date:"checked 11 Nov 2026"},
+    {item:"SolarMax 5.12kWh 48V 100Ah lithium battery", price:"Rs 250,000", src:"w11stop.com", url:"https://w11stop.com/solarmax-lithium-battery-price-in-pakistan/solarmax-sm-lfp-5-12k-100amp-lithium-ion-solar-battery-price-in-pakistan", date:"21 Jul 2026"},
+    {item:"Grid export rate under 2026 net billing", price:"About Rs 11 per unit", src:"The News", url:"https://www.thenews.pk/print/1398311-govt-ends-net-metering-shifts-rooftop-solar-to-net-billing", date:"10 Feb 2026"}
+  ]
+};
+
+/* avg = average watts while running (fridge/AC duty cycle included), peak = watts when on, surge = start-up multiple */
+var APPLIANCES = [
+  {id:"bulb", name:"LED bulb", avg:12, peak:12, hrs:6, qty:6},
+  {id:"tube", name:"LED tube light", avg:20, peak:20, hrs:6, qty:2},
+  {id:"fan", name:"Ceiling fan", avg:75, peak:75, hrs:12, qty:4},
+  {id:"dcfan", name:"DC inverter fan", avg:35, peak:35, hrs:12, qty:0},
+  {id:"ac1", name:"Inverter AC 1 ton", avg:750, peak:1100, hrs:8, qty:0},
+  {id:"ac15", name:"Inverter AC 1.5 ton", avg:1000, peak:1600, hrs:8, qty:1},
+  {id:"acn", name:"Non-inverter AC 1.5 ton", avg:1700, peak:1900, hrs:8, qty:0, surge:2},
+  {id:"fridge", name:"Refrigerator", avg:120, peak:250, hrs:24, qty:1, surge:3},
+  {id:"freezer", name:"Deep freezer", avg:150, peak:300, hrs:24, qty:0, surge:3},
+  {id:"motor05", name:"Water motor ½ HP", avg:375, peak:375, hrs:1, qty:0, surge:3},
+  {id:"motor1", name:"Water motor 1 HP", avg:750, peak:750, hrs:1, qty:1, surge:3},
+  {id:"wash", name:"Washing machine", avg:400, peak:500, hrs:1, qty:1, surge:2},
+  {id:"iron", name:"Iron", avg:1000, peak:1000, hrs:0.5, qty:1},
+  {id:"tv", name:"LED TV", avg:100, peak:100, hrs:5, qty:1},
+  {id:"laptop", name:"Laptop", avg:60, peak:60, hrs:6, qty:0},
+  {id:"pc", name:"Desktop computer", avg:200, peak:250, hrs:6, qty:0},
+  {id:"micro", name:"Microwave oven", avg:1200, peak:1200, hrs:0.3, qty:0},
+  {id:"disp", name:"Water dispenser", avg:90, peak:500, hrs:24, qty:0},
+  {id:"cooler", name:"Room air cooler", avg:200, peak:200, hrs:10, qty:0},
+  {id:"heater", name:"Electric heater", avg:1500, peak:1500, hrs:3, qty:0},
+  {id:"router", name:"WiFi router", avg:15, peak:15, hrs:24, qty:1}
+];
+
+var SUN_HOURS = 5, EFF = 0.78, DAY_SHARE = 0.6, SIZES = [3,4,6,8,10,12,15];
+var $ = function(id){return document.getElementById(id)};
+var rs = function(n){return "Rs " + Math.round(n).toLocaleString("en-PK")};
+
+function buildList(){
+  var html = "";
+  APPLIANCES.forEach(function(a){
+    html += '<div class="row'+(a.qty?' on':'')+'" id="r-'+a.id+'">' +
+      '<div class="nm">'+a.name+'<span class="w">'+a.peak+' W</span></div>' +
+      '<div class="step" role="group" aria-label="'+a.name+' quantity">' +
+        '<button type="button" data-id="'+a.id+'" data-d="-1" aria-label="Fewer">−</button>' +
+        '<output id="q-'+a.id+'">'+a.qty+'</output>' +
+        '<button type="button" data-id="'+a.id+'" data-d="1" aria-label="More">+</button>' +
+      '</div>' +
+      '<label class="hrs"><input type="number" min="0" max="24" step="0.5" value="'+a.hrs+'" data-h="'+a.id+'" aria-label="'+a.name+' hours per day"> hrs</label>' +
+    '</div>';
+  });
+  $("apps").innerHTML = html;
+  $("apps").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-id]"); if(!b) return;
+    var a = APPLIANCES.find(function(x){return x.id===b.dataset.id});
+    a.qty = Math.max(0, Math.min(20, a.qty + Number(b.dataset.d)));
+    $("q-"+a.id).textContent = a.qty;
+    $("r-"+a.id).classList.toggle("on", a.qty>0);
+    calc();
+  });
+  $("apps").addEventListener("input", function(e){
+    var id = e.target.dataset.h; if(!id) return;
+    var a = APPLIANCES.find(function(x){return x.id===id});
+    a.hrs = Math.max(0, Math.min(24, Number(e.target.value)||0));
+    calc();
+  });
+}
+
+function calc(){
+  var dailyWh = 0, loadW = 0, surgeExtra = 0;
+  APPLIANCES.forEach(function(a){
+    if(!a.qty) return;
+    dailyWh += a.qty * a.avg * a.hrs;
+    loadW += a.qty * a.peak;
+    if(a.surge) surgeExtra = Math.max(surgeExtra, a.peak * (a.surge - 1));
+  });
+  var ppw = Number($("ppw").value) || PRICES.panelPerWatt;
+  var rate = Number($("rate").value) || 0;
+  var perKw = Number($("install").value) || 0;
+  var batShare = Number($("battery").value);
+
+  if(dailyWh <= 0){
+    $("resBody").innerHTML = '<p class="empty">Add at least one appliance to see your solar system.</p>';
+    $("mbar").innerHTML = '<span>Add appliances to start</span>';
+    return;
+  }
+
+  var dailyUnits = dailyWh/1000;
+  var needKw = dailyUnits / (SUN_HOURS*EFF);
+  var panels = Math.max(2, Math.ceil(needKw*1000/PRICES.panelWatt));
+  var arrayKw = panels*PRICES.panelWatt/1000;
+
+  var loadKw = (loadW*0.8 + surgeExtra*0.5)/1000;
+  var invNeed = Math.max(loadKw*1.2, arrayKw/1.4);
+  var inv = SIZES.find(function(s){return s>=invNeed}) || SIZES[SIZES.length-1];
+  var invNote = invNeed > 15 ? " (consider two inverters or 3-phase)" : "";
+
+  var batKwh = dailyUnits*batShare/0.9;
+  var bats = batShare>0 ? Math.max(1, Math.ceil(batKwh/PRICES.battery.kwh)) : 0;
+
+  var cPanels = panels*PRICES.panelWatt*ppw;
+  var cInv = PRICES.inverters[inv];
+  var cBat = bats*PRICES.battery.price;
+  var cInstall = arrayKw*perKw;
+  var total = cPanels+cInv+cBat+cInstall;
+
+  var monthUnits = dailyUnits*30;
+  var genMonth = arrayKw*SUN_HOURS*EFF*30;
+  var covered = Math.min(1, DAY_SHARE + batShare);
+  var selfUse = Math.min(genMonth, monthUnits*covered);
+  var exportU = Math.max(0, genMonth - selfUse);
+  var save = selfUse*rate + exportU*PRICES.exportRate;
+  var years = save>0 ? total/(save*12) : 0;
+
+  var cells = "", shown = Math.min(panels, 48);
+  for(var i=0;i<shown;i++) cells += '<span class="cell lit"></span>';
+
+  $("resBody").innerHTML =
+    '<div class="big">'+arrayKw.toFixed(1)+'<small>kW solar</small></div>' +
+    '<p class="sub">'+panels+' panels of '+PRICES.panelWatt+' W'+(panels>48?' (showing 48)':'')+'</p>' +
+    '<div class="array" aria-hidden="true">'+cells+'</div>' +
+    '<dl class="kv">' +
+      '<dt>Your daily use</dt><dd>'+dailyUnits.toFixed(1)+' units</dd>' +
+      '<dt>Monthly use</dt><dd>'+Math.round(monthUnits)+' units</dd>' +
+      '<dt>Hybrid inverter</dt><dd>'+inv+' kW'+invNote+'</dd>' +
+      '<dt>Lithium batteries</dt><dd>'+(bats? bats+' × 5 kWh':'None')+'</dd>' +
+    '</dl>' +
+    '<div class="sep"></div>' +
+    '<dl class="kv">' +
+      '<dt>Panels</dt><dd>'+rs(cPanels)+'</dd>' +
+      '<dt>Inverter</dt><dd>'+rs(cInv)+'</dd>' +
+      '<dt>Batteries</dt><dd>'+rs(cBat)+'</dd>' +
+      '<dt>Structure, wiring, labour</dt><dd>'+rs(cInstall)+'</dd>' +
+    '</dl>' +
+    '<div class="sep"></div>' +
+    '<div class="kv"><span>Estimated total</span><span class="total">'+rs(total)+'</span></div>' +
+    '<div class="pay">You save about <strong>'+rs(save)+'</strong> a month. The system pays for itself in about <strong>'+years.toFixed(1)+' years</strong>.</div>';
+
+  $("mbar").innerHTML = '<span>'+arrayKw.toFixed(1)+' kW • '+rs(total)+'</span><a href="#result">See details</a>';
+}
+
+function renderPrices(){
+  $("updated").textContent = "Updated " + PRICES.updated;
+  $("ppw").value = PRICES.panelPerWatt;
+  $("priceRows").innerHTML = PRICES.rows.map(function(r){
+    return '<tr><td>'+r.item+'</td><td class="num">'+r.price+'</td><td class="src"><a href="'+r.url+'" target="_blank" rel="noopener nofollow">'+r.src+'</a><br>'+r.date+'</td></tr>';
+  }).join("");
+}
+
+["ppw","rate","install","battery"].forEach(function(id){ $(id).addEventListener("input", calc); });
+
+/* On the live site, load fresh prices written by the daily update script */
+function start(){ renderPrices(); buildList(); calc(); }
+try{
+  fetch("prices.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
+  .then(function(p){ if(p && p.panelPerWatt){ PRICES = p; } start(); })
+  .catch(function(){ start(); });
+}catch(e){ start(); }
+</script>
+</body>
+</html>

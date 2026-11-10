@@ -1,0 +1,130 @@
+{
+ "updated": "10 November 2026",
+ "panelPerWatt": 42.88,
+ "panelWatt": 585,
+ "inverters": {
+  "3": 149000.0,
+  "4": 174000.0,
+  "6": 229000.0,
+  "8": 302000.0,
+  "10": 375000.0,
+  "12": 488000.0,
+  "15": 600000.0
+ },
+ "battery": {
+  "name": "48V 100Ah lithium (about 5 kWh)",
+  "kwh": 5.12,
+  "price": 230000.0
+ },
+ "exportRate": 11,
+ "rows": [
+  {
+   "item": "Longi Hi-Mo X7 585W N-type bifacial",
+   "price": "Rs 42.75 per watt",
+   "value": 42.75,
+   "src": "solarpanelpriceinpakistan.online",
+   "url": "https://solarpanelpriceinpakistan.online/",
+   "date": "10 November 2026",
+   "kind": "panel_ppw"
+  },
+  {
+   "item": "Astronergy 585W N-type bifacial",
+   "price": "Rs 41.00 per watt",
+   "value": 41.0,
+   "src": "solarpanelpriceinpakistan.online",
+   "url": "https://solarpanelpriceinpakistan.online/",
+   "date": "10 November 2026",
+   "kind": "panel_ppw"
+  },
+  {
+   "item": "Risen 585W N-type TOPCon bifacial",
+   "price": "Rs 43.00 per watt",
+   "value": 43.0,
+   "src": "solarpanelpriceinpakistan.online",
+   "url": "https://solarpanelpriceinpakistan.online/",
+   "date": "10 November 2026",
+   "kind": "panel_ppw"
+  },
+  {
+   "item": "Longi Hi-MO X10 620W N-type bifacial",
+   "price": "Rs 46.20 per watt",
+   "value": 46.2,
+   "src": "solarpanelprices.pk",
+   "url": "https://solarpanelprices.pk/",
+   "date": "5 Nov 2026",
+   "kind": "panel_ppw"
+  },
+  {
+   "item": "Itel 6kW Pro hybrid inverter",
+   "price": "Rs 140,000",
+   "value": 140000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/solar/itel-6kw-pro-hybird-solar-inverter-price-in-pakistan",
+   "date": "checked 11 Nov 2026",
+   "kind": "inverter_6"
+  },
+  {
+   "item": "Gripsun Level 6kW hybrid inverter",
+   "price": "Rs 225,000",
+   "value": 225000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/gripsun/gripsun-level-6kw-hybrid-solar-inverter-price-in-pakistan",
+   "date": "1 Nov 2026",
+   "kind": "inverter_6"
+  },
+  {
+   "item": "Solis 6kW LV hybrid inverter",
+   "price": "Rs 233,000",
+   "value": 233000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/solis-hybrid-solar-inverter/solis-6kw-hybrid-solar-inverter",
+   "date": "checked 11 Nov 2026",
+   "kind": "inverter_6"
+  },
+  {
+   "item": "Inverex Nitrox 6.6kW hybrid inverter",
+   "price": "Rs 270,000",
+   "value": 270000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/inverex-hybrid-inverter-price-in-pakistan/inverex-nitrox-6-6kw-hybrid-solar-inverter-price-in-pakistan",
+   "date": "1 Sep 2026",
+   "kind": "inverter_6"
+  },
+  {
+   "item": "MaxPower Voltas H6 10kW hybrid inverter",
+   "price": "Rs 375,000",
+   "value": 375000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/maxpower-hybrid-inverters-price-in-pakistan/maxpower-voltas-h6-10kw-hybrid-inverter",
+   "date": "21 Jul 2026",
+   "kind": "inverter_10"
+  },
+  {
+   "item": "Bader Energy 48V 100Ah lithium battery",
+   "price": "Rs 195,000",
+   "value": 195000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/solar-lithium-ion-batteries/bader-energy-48v-100ah-lithium-battery-price-in-pakistan",
+   "date": "26 Jun 2026",
+   "kind": "battery_5kwh"
+  },
+  {
+   "item": "Narada 48V 100Ah lithium battery",
+   "price": "Rs 230,000",
+   "value": 230000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/narada-lithium-ion-batteries/narada-48npfc100-lithium-battery",
+   "date": "checked 11 Nov 2026",
+   "kind": "battery_5kwh"
+  },
+  {
+   "item": "SolarMax 5.12kWh 48V 100Ah lithium battery",
+   "price": "Rs 250,000",
+   "value": 250000.0,
+   "src": "w11stop.com",
+   "url": "https://w11stop.com/solarmax-lithium-battery-price-in-pakistan/solarmax-sm-lfp-5-12k-100amp-lithium-ion-solar-battery-price-in-pakistan",
+   "date": "21 Jul 2026",
+   "kind": "battery_5kwh"
+  }
+ ]
+}
