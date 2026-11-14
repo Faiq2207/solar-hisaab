@@ -1,5 +1,5 @@
 {
- "updated": "13 November 2026",
+ "updated": "14 November 2026",
  "panelPerWatt": 42.88,
  "panelWatt": 585,
  "inverters": {
@@ -24,7 +24,7 @@
    "value": 42.75,
    "src": "solarpanelpriceinpakistan.online",
    "url": "https://solarpanelpriceinpakistan.online/",
-   "date": "13 November 2026",
+   "date": "14 November 2026",
    "kind": "panel_ppw"
   },
   {
@@ -33,7 +33,7 @@
    "value": 41.0,
    "src": "solarpanelpriceinpakistan.online",
    "url": "https://solarpanelpriceinpakistan.online/",
-   "date": "13 November 2026",
+   "date": "14 November 2026",
    "kind": "panel_ppw"
   },
   {
@@ -42,7 +42,7 @@
    "value": 43.0,
    "src": "solarpanelpriceinpakistan.online",
    "url": "https://solarpanelpriceinpakistan.online/",
-   "date": "13 November 2026",
+   "date": "14 November 2026",
    "kind": "panel_ppw"
   },
   {
